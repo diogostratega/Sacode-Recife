@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1600" role="img" aria-labelledby="title desc">
+  <title id="title">Foto de pessoas no evento</title>
+  <desc id="desc">Placeholder em retrato para a imagem de público do evento.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#15110E"/>
+      <stop offset="100%" stop-color="#0A0908"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1600" fill="url(#bg)"/>
+  <rect x="70" y="70" width="760" height="1460" rx="24" fill="#211914" stroke="#3A291D"/>
+  <circle cx="450" cy="520" r="160" fill="#F7941D" opacity="0.35"/>
+  <circle cx="450" cy="500" r="115" fill="#F7F3EE" opacity="0.8"/>
+  <rect x="280" y="650" width="340" height="290" rx="18" fill="#F7941D" opacity="0.8"/>
+  <text x="450" y="1040" text-anchor="middle" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="#F7F3EE">PESSOAS DO EVENTO</text>
+  <text x="450" y="1120" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" fill="#C9BEB4">insira a foto em retrato aqui</text>
+</svg>

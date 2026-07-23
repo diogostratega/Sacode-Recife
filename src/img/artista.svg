@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">Artista</title>
+  <desc id="desc">Placeholder para imagem de artista na seção de atrações.</desc>
+  <rect width="120" height="120" rx="18" fill="#15110E" stroke="#3A291D"/>
+  <circle cx="60" cy="46" r="20" fill="#F7941D" opacity="0.9"/>
+  <rect x="24" y="70" width="72" height="28" rx="10" fill="#F7F3EE" opacity="0.85"/>
+</svg>
