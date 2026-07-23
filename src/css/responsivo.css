@@ -1,0 +1,174 @@
+@media (max-width: 899px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 16px 16px;
+    display: none;
+    z-index: 60;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--color-border);
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-logo-area {
+    display: none;
+  }
+}
+
+@media (max-width: 719px) {
+  .header-buy-btn {
+    display: none;
+  }
+
+  .hero-logo-area {
+    display: flex;
+  }
+
+  .hero {
+    min-height: calc(100svh - 112px);
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .hero-content,
+  .hero-media {
+    grid-column: auto;
+  }
+
+  .header-inner {
+    min-height: 62px;
+    gap: 8px;
+  }
+
+  .logo {
+    font-size: 0.95rem;
+    max-width: 44vw;
+    line-height: 1.15;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .status-pill {
+    font-size: 0.64rem;
+    padding: 8px 10px;
+    max-width: 42vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-logo-area {
+    min-height: 78px;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .hero-logo {
+    width: min(100%, 220px);
+  }
+
+  .hero-content h1 {
+    display: none;
+    font-size: clamp(1.8rem, 9vw, 2.35rem);
+    line-height: 1.08;
+    text-align: center;
+  }
+
+  .hero-lede {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .hero-fact {
+    font-size: 0.88rem;
+    padding: 10px 12px;
+  }
+
+  .section-head h2,
+  .ticket-content h2,
+  .about-copy h2,
+  .final-cta h2 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .hero-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-ctas,
+  .final-cta-actions {
+    width: 100%;
+  }
+
+  .hero-ctas .btn,
+  .final-cta-actions .btn {
+    width: 100%;
+  }
+
+  .about-grid,
+  .ticket-layout,
+  .footer-layout,
+  .final-cta-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-media,
+  .ticket-media {
+    aspect-ratio: 4 / 5;
+  }
+
+  .attractions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-patrocinadores {
+    order: -1;
+  }
+
+  .brand-chip {
+    width: 100%;
+  }
+
+  .brand-logo {
+    width: 100%;
+    max-width: 180px;
+  }
+}

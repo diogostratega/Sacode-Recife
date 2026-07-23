@@ -1,39 +1,62 @@
 .hero {
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto;
+  align-items: center;
   background-color: var(--color-surface);
   background-image:
     linear-gradient(135deg, transparent 46%, rgba(247, 148, 29, 0.12) 47%, rgba(247, 148, 29, 0.12) 48%, transparent 49%),
     linear-gradient(135deg, transparent 60%, rgba(247, 148, 29, 0.08) 61%, rgba(247, 148, 29, 0.08) 62%, transparent 63%);
+  padding: 120px 18px 18px;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
   align-items: center;
-  padding-top: var(--space-mobile);
-  padding-bottom: var(--space-mobile);
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.hero-logo {
+  margin: 0;
+}
+
+.hero-content {
+  grid-column: 1 / 2;
 }
 
 .hero-media {
+  grid-column: 2 / 4;
   position: relative;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  justify-self: center;
   border-radius: var(--radius-md);
   overflow: hidden;
   border: 1px solid var(--color-border);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  background-color: transparent;
 }
 
 .hero-media picture {
-  display: block;
-  width: 100%;
-  aspect-ratio: 900 / 1600;
+  display: inline-block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
 }
 
 .hero-media::after {
@@ -47,11 +70,15 @@
 .hero-content h1 {
   font-size: clamp(2rem, 5vw + 1rem, 3.4rem);
   letter-spacing: -0.01em;
+  max-width: 100%;
+  margin: 0;
 }
 
 .hero-lede {
   font-size: 1.05rem;
   max-width: 52ch;
+  margin: 0;
+  line-height: 1.5;
 }
 
 @media (min-width: 700px) {
@@ -66,23 +93,36 @@
 
 @media (min-width: 900px) {
   .hero-grid {
-    grid-template-columns: 1.05fr 0.95fr;
-    padding-top: var(--space-desktop);
-    padding-bottom: var(--space-desktop);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .hero-media picture {
-    aspect-ratio: 1500 / 1000;
+    max-height: 82vh;
   }
 
   .about-grid {
     grid-template-columns: 1fr 1fr;
-    min-height: 100vh;
+    min-height: auto;
+    align-items: center;
+  }
+
+  .about-media {
+    max-width: 460px;
+  }
+
+  .location-layout {
+    grid-template-columns: 0.9fr 1.1fr;
   }
 
   .final-cta-inner,
   .footer-layout {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .final-cta {
+    padding: 40px;
   }
 
   .ticket-layout {
@@ -100,34 +140,6 @@
   }
 }
 
-@media (max-width: 899px) {
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
-    flex-direction: column;
-    gap: 0;
-    padding: 8px 20px 16px;
-    display: none;
-  }
-
-  .nav-links.is-open {
-    display: flex;
-  }
-
-  .nav-links a {
-    padding: 14px 0;
-    border-bottom: 1px solid var(--color-border);
-    width: 100%;
-  }
-
-  .menu-toggle {
-    display: inline-flex;
-  }
-}
 
 @media (min-width: 900px) {
   .nav-links {

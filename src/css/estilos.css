@@ -32,6 +32,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img {
@@ -54,8 +55,10 @@ p {
   margin: 0 0 1em 0;
   color: var(--color-muted);
   max-width: 62ch;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
 a {
@@ -71,7 +74,7 @@ ul {
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 16px;
 }
 
 section {
