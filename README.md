@@ -4,8 +4,6 @@ Landing page responsiva desenvolvida para apresentar o evento **Sacode Jaboatão
 
 O projeto foi construído com **HTML, CSS e JavaScript puro**, sem frameworks ou dependências de instalação. A proposta é servir tanto como demonstração de uma página profissional para eventos quanto como base reutilizável para outras festas, shows e festivais.
 
-> **Aviso:** esta página representa uma edição já realizada do evento. Alguns textos, links e contatos são demonstrativos e devem ser atualizados antes de uma publicação real.
-
 ---
 
 ## Visão geral
@@ -33,12 +31,6 @@ A página apresenta:
 | HTML5 | Estrutura semântica e conteúdo da página |
 | CSS3 | Layout, componentes, animações e responsividade |
 | JavaScript | Menu mobile, ano automático e animações ao rolar |
-| Google Fonts | Carregamento da fonte Ubuntu |
-| Google Maps | Exibição do endereço do evento em um mapa incorporado |
-| WhatsApp | Links de contato direto com mensagem predefinida |
-| Outgo | Link externo para a plataforma de ingressos |
-
-O projeto não utiliza Node.js, npm, bibliotecas JavaScript ou ferramentas de compilação.
 
 ---
 
