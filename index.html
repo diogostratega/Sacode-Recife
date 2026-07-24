@@ -22,9 +22,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="src/css/estilos.css">
-  <link rel="stylesheet" href="src/css/componentes.css">
-  <link rel="stylesheet" href="src/css/estrutura.css">
   <link rel="stylesheet" href="src/css/responsivo.css">
 
   <link rel="icon" type="image/svg+xml"
@@ -33,6 +32,7 @@
 
 <body>
 
+  <!-- Cabeçalho e navegação principal -->
   <header class="site-header">
     <div class="container header-inner">
       <a href="#inicio" class="logo">SACODE <span>JABOATÃO</span></a>
@@ -63,10 +63,11 @@
 
   <main>
 
+    <!-- Apresentação principal do evento -->
     <section id="inicio" class="hero">
       <div class="container hero-grid">
         <div class="hero-content reveal">
-          <div class="hero-logo-area" aria-hidden="true">
+          <div class="hero-logo-area">
             <img src="./src/img/logo.png" alt="Logo do evento Sacode Jaboatão" class="hero-logo"
               loading="lazy" decoding="async">
           </div>
@@ -128,6 +129,7 @@
       </div>
     </section>
 
+    <!-- Informações rápidas -->
     <section id="informacoes" aria-labelledby="informacoes-titulo">
       <div class="container">
         <h2 id="informacoes-titulo" class="visually-hidden">Informações rápidas</h2>
@@ -173,6 +175,7 @@
       </div>
     </section>
 
+    <!-- Programação e atrações -->
     <section id="atracoes" aria-labelledby="atracoes-titulo">
       <div class="container">
         <div class="section-head reveal">
@@ -201,6 +204,7 @@
       </div>
     </section>
 
+    <!-- Sobre o evento -->
     <section id="sobre" aria-labelledby="sobre-titulo">
       <div class="container about-grid">
         <div class="about-copy reveal">
@@ -217,6 +221,7 @@
       </div>
     </section>
 
+    <!-- Funcionamento dos ingressos -->
     <section id="ingresso" aria-labelledby="ingresso-titulo">
       <div class="container ticket-layout">
         <div class="ticket-media reveal">
@@ -261,6 +266,7 @@
       </div>
     </section>
 
+    <!-- Endereço e mapa -->
     <section id="localizacao" aria-labelledby="localizacao-titulo">
       <div class="container">
         <div class="section-head reveal">
@@ -284,6 +290,7 @@
       </div>
     </section>
 
+    <!-- Perguntas frequentes -->
     <section id="faq" aria-labelledby="faq-titulo">
       <div class="container">
         <div class="section-head reveal">
@@ -315,6 +322,7 @@
       </div>
     </section>
 
+    <!-- Chamada final para contato -->
     <section class="final-cta">
       <div class="container reveal final-cta-inner">
         <div class="final-cta-copy">
@@ -332,6 +340,7 @@
 
   </main>
 
+  <!-- Rodapé e patrocinadores -->
   <footer class="site-footer">
     <div class="container footer-layout">
       <div class="footer-grid">
@@ -354,6 +363,7 @@
     </div>
   </footer>
 
+  <!-- Atalho flutuante para o WhatsApp -->
   <a class="whatsapp-float"
     href="https://wa.me/5581999999999?text=Ol%C3%A1%2C%20quero%20comprar%20ingresso%20para%20o%20evento%20Sacode%20Jaboat%C3%A3o."
     target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
@@ -364,7 +374,7 @@
     </svg>
   </a>
 
-  <script src="src/js/main.js"></script>
+  <script src="src/js/main.js" defer></script>
 </body>
 
 </html>

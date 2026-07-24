@@ -1,46 +1,96 @@
-(function () {
-  var toggle = document.getElementById('menu-toggle');
-  var menu = document.getElementById('menu-principal');
+(() => {
+  'use strict';
 
-  if (toggle && menu) {
-    toggle.addEventListener('click', function () {
-      var isOpen = menu.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  const menuButton = document.getElementById('menu-toggle');
+  const navigationMenu = document.getElementById('menu-principal');
+  const currentYearElement = document.getElementById('ano-atual');
+  const revealElements = document.querySelectorAll('.reveal');
+
+  /**
+   * Abre ou fecha o menu e mantém os atributos de acessibilidade atualizados.
+   */
+  function setMenuState(isOpen) {
+    if (!menuButton || !navigationMenu) return;
+
+    navigationMenu.classList.toggle('is-open', isOpen);
+    menuButton.setAttribute('aria-expanded', String(isOpen));
+    menuButton.setAttribute(
+      'aria-label',
+      isOpen ? 'Fechar menu de navegação' : 'Abrir menu de navegação'
+    );
+  }
+
+  function initializeMobileMenu() {
+    if (!menuButton || !navigationMenu) return;
+
+    menuButton.addEventListener('click', () => {
+      const menuIsOpen = navigationMenu.classList.contains('is-open');
+      setMenuState(!menuIsOpen);
     });
 
-    menu.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        menu.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
+    navigationMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMenuState(false));
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        setMenuState(false);
+      }
+    });
+
+    const desktopBreakpoint = window.matchMedia('(min-width: 900px)');
+    const closeMenuOnDesktop = ({ matches }) => {
+      if (matches) setMenuState(false);
+    };
+
+    if (typeof desktopBreakpoint.addEventListener === 'function') {
+      desktopBreakpoint.addEventListener('change', closeMenuOnDesktop);
+    } else {
+      desktopBreakpoint.addListener(closeMenuOnDesktop);
+    }
+  }
+
+  function updateCurrentYear() {
+    if (!currentYearElement) return;
+    currentYearElement.textContent = String(new Date().getFullYear());
+  }
+
+  function showAllRevealElements() {
+    revealElements.forEach((element) => {
+      element.classList.add('is-visible');
     });
   }
 
-  var anoEl = document.getElementById('ano-atual');
-  if (anoEl) {
-    anoEl.textContent = String(new Date().getFullYear());
-  }
+  function initializeRevealAnimations() {
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
 
-  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var reveals = document.querySelectorAll('.reveal');
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      showAllRevealElements();
+      return;
+    }
 
-  if (reduceMotion || !('IntersectionObserver' in window)) {
-    reveals.forEach(function (el) {
-      el.classList.add('is-visible');
-    });
-  } else {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
           entry.target.classList.add('is-visible');
           observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
+        });
+      },
+      { threshold: 0.15 }
+    );
 
-    reveals.forEach(function (el, index) {
-      el.style.transitionDelay = Math.min(index * 80, 320) + 'ms';
-      observer.observe(el);
+    revealElements.forEach((element, index) => {
+      const delay = Math.min(index * 80, 320);
+      element.style.setProperty('--reveal-delay', `${delay}ms`);
+      observer.observe(element);
     });
   }
+
+  initializeMobileMenu();
+  updateCurrentYear();
+  initializeRevealAnimations();
 })();
